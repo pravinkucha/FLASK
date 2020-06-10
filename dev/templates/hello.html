@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<body>
+		<h1>Hello {{results.name}}</h1>
+		{% if results.marks>=50 %}
+			<h2>Your result is pass</h2>
+		{% else %}
+			<h2>Your result is Fail</h2>
+		{% endif %}
+		<table border='1'>
+			{% for key, value in results.data.items() %}
+			<tr>
+				<th>{{key}}</th>
+				<td>{{value}}</td>
+			</tr>			
+			{% endfor %}		
+		</table>
+	</body>
+</html>
