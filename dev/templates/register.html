@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html> 
+   <head>
+      <title>Register Form</title>
+      <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">     
+      <script type="text/javascript" src="{{url_for('static',filename='reg.js')}}"></script>
+   </head>	
+   <body>
+     <form action="/singup" method='post'onsubmit="return fn_valide();">
+	  <div class="container">
+		<h1><span class='red_strt'>{{'Sign up successful' if results else ''}}</span></h1>
+		<h1>Register</h1>
+		<p>Please fill in this form to create an account.</p>
+		<hr>
+		<label for="email"><b>Email </b><span class='red_strt'>*</span></label>
+		<input type="text" placeholder="Enter Email" name="txtemail" id="txtemail" required value={{results['txtemail'] if results else ''}}>
+
+		<label for="psw"><b>Password </b><span class='red_strt'>*</span></label>
+		<input type="password" placeholder="Enter Password" name="txtpsw" id="txtpsw" required value={{results['txtpsw'] if results else ''}}>
+
+		<label for="psw-repeat"><b>Repeat Password</b></label>
+		<input type="password" placeholder="Repeat Password" name="txtpswrepeat" id="txtpswrepeat" required value={{results['txtpswrepeat'] if results else ''}} >
+		<hr>
+		<p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+		<button type="submit" class="registerbtn">Register</button>
+	  </div>	  
+	  <div class="container signin">
+		<p>Already have an account? <a href="#">Sign in</a>.</p>
+	  </div>
+	</form>
+   </body>	
+</html>
